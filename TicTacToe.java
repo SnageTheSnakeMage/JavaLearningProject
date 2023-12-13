@@ -80,7 +80,7 @@ public class TicTacToe {
             }
             if(stringBoard.charAt(2) == stringBoard.charAt(4) && stringBoard.charAt(4) == stringBoard.charAt(6)){
                 //Top Right - Bottom Left Diagonal Win
-                if(stringBoard.charAt(2) != '_'){winner = String.valueOf(stringBoard.charAt(0));}
+                if(stringBoard.charAt(2) != '_'){winner = String.valueOf(stringBoard.charAt(2));}
             }
         }
         /*
@@ -122,48 +122,93 @@ public class TicTacToe {
         input = input.toLowerCase();
         switch (input){
             case "tl", "top left", "lt", "left top":
+                if(Objects.equals(currentBoard[0][0], "_")){
                 currentBoard[0][0] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
             case "tm", "top middle", "top mid", "top center", "tc", "center top", "ct", "mid top", "middle top", "mt":
+                if(Objects.equals(currentBoard[0][1], "_")){
                 currentBoard[0][1] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
                 
             case "tr", "top right":
+                if(Objects.equals(currentBoard[0][2], "_")){
                 currentBoard[0][2] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
                 
             case "lm", "left middle", "middle left", "ml":
+                if(Objects.equals(currentBoard[1][0], "_")){
                 currentBoard[1][0] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
                 
             case "center", "middle", "c", "m":
+                if(Objects.equals(currentBoard[1][1], "_")){
                 currentBoard[1][1] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
                 
             case "rm", "right middle", "middle right", "mr":
+                if(Objects.equals(currentBoard[1][2], "_")){
                 currentBoard[1][2] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
                 
             case "bl", "bottom left", "left bottom", "lb":
+                if(Objects.equals(currentBoard[2][0], "_")){
                 currentBoard[2][0] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
                 
             case "bm", "bottom middle", "mb", "bottom center", "bc", "cb", "center bottom":
+                if(Objects.equals(currentBoard[2][1], "_")){
                 currentBoard[2][1] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
                 
             case "br", "bottom right", "rb", "right bottom":
+                if(Objects.equals(currentBoard[2][2], "_")){
                 currentBoard[2][2] = player;
                 detectWin(currentBoard);
-                return true;
+                return true;}
+                else{
+                    System.out.println("That Space Is Taken!");
+                    return false;
+                }
                 
             default:
                 System.out.println("ERROR: Input out of bounds. \n Try using things like: bottom right, br, center, c for inputs instead");
